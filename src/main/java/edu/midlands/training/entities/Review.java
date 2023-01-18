@@ -20,7 +20,7 @@ public class Review {
 
     private String username;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn
     private Vehicle vehicle;
 
@@ -94,5 +94,16 @@ public class Review {
         this.vehicle = vehicle;
     }
 
-
+    @Override
+    public String toString() {
+        return "Review{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", rating='" + rating + '\'' +
+                ", date='" + date + '\'' +
+                ", username='" + username + '\'' +
+                ", vehicle=" + vehicle +
+                '}';
+    }
 }
