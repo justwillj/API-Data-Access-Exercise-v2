@@ -4,5 +4,5 @@ import edu.midlands.training.entities.Vehicle;
 import java.util.List;
 
 public interface VehicleService {
-  List<Vehicle>GetVehicle();
+  List<Vehicle>getVehicles();
 }

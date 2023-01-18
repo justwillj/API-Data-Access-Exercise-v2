@@ -10,7 +10,7 @@ public class VehicleServiceImpl implements VehicleService{
   @Autowired
   private VehicleRepository vehicleRepository;
   @Override
-  public List<Vehicle> GetVehicle() {
+  public List<Vehicle> getVehicles() {
     return vehicleRepository.findAll();
   }
 }
