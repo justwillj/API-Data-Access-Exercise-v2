@@ -35,4 +35,9 @@ public class VehicleController {
     return vehicleService.updateVehicleById(id,newVehicle);
   }
 
+  @PostMapping("/vehicles")
+  public Vehicle addVehicle(@RequestBody Vehicle newVehicle){
+    return vehicleService.addVehicle(newVehicle);
+  }
+
 }
