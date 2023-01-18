@@ -4,7 +4,9 @@ import edu.midlands.training.entities.Vehicle;
 import edu.midlands.training.repositories.VehicleRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VehicleServiceImpl implements VehicleService{
 
   @Autowired
