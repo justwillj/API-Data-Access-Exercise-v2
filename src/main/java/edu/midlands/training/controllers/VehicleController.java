@@ -6,10 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class VehicleController {
@@ -31,6 +28,11 @@ public class VehicleController {
   @DeleteMapping("/vehicles/{id}")
   public void deleteVehicleById(@PathVariable Long id){
     vehicleService.deleteVehicleById(id);
+  }
+
+  @PutMapping("/vehicles/{id}")
+  public Vehicle updateVehicleById(@PathVariable Long id, @RequestBody Vehicle newVehicle){
+    return vehicleService.updateVehicleById(id,newVehicle);
   }
 
 }

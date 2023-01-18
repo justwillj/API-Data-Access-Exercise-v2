@@ -10,4 +10,6 @@ public interface VehicleService {
   Optional<Vehicle> getVehicleById(Long id);
 
   void deleteVehicleById(Long id);
+
+  Vehicle updateVehicleById(Long id, Vehicle newVehicle);
 }
