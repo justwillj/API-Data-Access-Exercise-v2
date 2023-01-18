@@ -12,8 +12,8 @@ public class VehicleController {
   private VehicleService vehicleService;
 
   //TEST
-  @GetMapping(value = "/vehicle")
-  public List<Vehicle>getVehicle(){
+  @GetMapping(value = "/vehicles")
+  public List<Vehicle>getVehicles(){
     return vehicleService.getVehicles();
   }
 
