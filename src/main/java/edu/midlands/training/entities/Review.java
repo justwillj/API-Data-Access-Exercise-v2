@@ -16,7 +16,7 @@ public class Review {
 
     private String rating;
 
-    private Date date;
+    private String date;
 
     private String username;
 
@@ -24,18 +24,6 @@ public class Review {
     @JoinColumn
     private Vehicle vehicle;
 
-    public Review() {
-    }
-
-    public Review(Long id, String title, String description, String rating, Date date, String username, Vehicle vehicle) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.rating = rating;
-        this.date = date;
-        this.username = username;
-        this.vehicle = vehicle;
-    }
 
     public Long getId() {
         return id;
@@ -69,11 +57,11 @@ public class Review {
         this.rating = rating;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -93,16 +81,18 @@ public class Review {
         this.vehicle = vehicle;
     }
 
-    @Override
-    public String toString() {
-        return "Review{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", rating='" + rating + '\'' +
-                ", date=" + date +
-                ", username='" + username + '\'' +
-                ", vehicle=" + vehicle +
-                '}';
+    public Review() {
     }
+
+    public Review(Long id, String title, String description, String rating, String date, String username, Vehicle vehicle) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.rating = rating;
+        this.date = date;
+        this.username = username;
+        this.vehicle = vehicle;
+    }
+
+
 }
