@@ -5,6 +5,7 @@ import edu.midlands.training.entities.Vehicle;
 import edu.midlands.training.services.ReviewService;
 import edu.midlands.training.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,11 @@ public class ReviewController {
     @GetMapping("/reviews/{id}")
     public Optional<Review> getReviewById(@PathVariable Long id){
             return reviewService.getReviewById(id);
+        }
+
+        @DeleteMapping("/reviews/{id}")
+        public void deleteReviewById(@PathVariable Long id){
+        reviewService.deleteReviewById(id);
         }
 
 
