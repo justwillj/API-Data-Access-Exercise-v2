@@ -1,9 +1,7 @@
 package edu.midlands.training.controllers;
 
 import edu.midlands.training.entities.Review;
-import edu.midlands.training.entities.Vehicle;
 import edu.midlands.training.services.ReviewService;
-import edu.midlands.training.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
