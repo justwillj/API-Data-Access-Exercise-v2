@@ -35,4 +35,9 @@ public class ReviewServiceImpl implements ReviewService {
     public Review updateReviewById(Long id, Review newReview) {
         return reviewRepository.save(newReview);
     }
+
+    @Override
+    public Review addReview(Review newReview) {
+        return reviewRepository.save(newReview);
+    }
 }

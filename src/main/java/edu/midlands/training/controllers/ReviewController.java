@@ -19,6 +19,11 @@ public class ReviewController {
         return reviewService.getReviews();
     }
 
+    @PostMapping("/reviews")
+    public Review addReview(@RequestBody Review newReview){
+        return reviewService.addReview(newReview);
+    }
+
 
     @GetMapping("/reviews/{id}")
     public Optional<Review> getReviewById(@PathVariable Long id){
