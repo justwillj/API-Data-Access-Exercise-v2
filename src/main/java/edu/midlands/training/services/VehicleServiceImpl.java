@@ -22,4 +22,9 @@ public class VehicleServiceImpl implements VehicleService{
   public Optional<Vehicle> getVehicleById(Long id) {
     return vehicleRepository.findById(id);
   }
+
+  @Override
+  public void deleteVehicleById(Long id) {
+    vehicleRepository.deleteById(id);
+  }
 }

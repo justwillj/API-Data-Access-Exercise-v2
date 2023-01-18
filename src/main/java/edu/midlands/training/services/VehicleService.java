@@ -8,4 +8,6 @@ public interface VehicleService {
   List<Vehicle>getVehicles();
 
   Optional<Vehicle> getVehicleById(Long id);
+
+  void deleteVehicleById(Long id);
 }
