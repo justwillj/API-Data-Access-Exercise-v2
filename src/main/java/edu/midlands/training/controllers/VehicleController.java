@@ -11,6 +11,7 @@ public class VehicleController {
   @Autowired
   private VehicleService vehicleService;
 
+  //TEST
   @GetMapping(value = "/vehicle")
   public List<Vehicle>getVehicle(){
     return vehicleService.getVehicles();
