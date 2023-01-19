@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface VehicleService {
   List<Vehicle>getVehicles(String type, String make);
 
-  Optional<Vehicle> getVehicleById(Long id);
+  Vehicle getVehicleById(Long id);
 
   void deleteVehicleById(Long id);
 
