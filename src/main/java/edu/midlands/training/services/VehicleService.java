@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface VehicleService {
-  List<Vehicle>getVehicles(String type, String make);
+  List<Vehicle>getVehicles(String type, String make,String model,Integer year);
 
   Vehicle getVehicleById(Long id);
 

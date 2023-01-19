@@ -18,9 +18,12 @@ public class VehicleServiceImpl implements VehicleService{
   @Autowired
   private VehicleRepository vehicleRepository;
   @Override
-  public List<Vehicle> getVehicles(String type, String make) {
+  public List<Vehicle> getVehicles(String type, String make,String model,Integer year) {
     List<Vehicle> queryVehicle =new ArrayList<>();
-    if (type == null && make == null){
+    if (type == null && make == null &&model==null &&year==null){
+      return vehicleRepository.findAll();
+    }
+    if(type!=null && make!=null && model!=null && year!=null){
       return vehicleRepository.findAll();
     }
 
@@ -34,18 +37,19 @@ public class VehicleServiceImpl implements VehicleService{
         }
       }
     } else if (type != null){
-      for (Vehicle v :vehicleRepository.findAll()) {
-        if (Objects.equals(v.getType(), type)) {
-          queryVehicle.add(v);
+      return vehicleRepository.findVehicleByType(type);
         }
-      }
-    } else if (make != null) {
-      for (Vehicle v : vehicleRepository.findAll()) {
-        if (Objects.equals(v.getMake(), make)) {
-          queryVehicle.add(v);
-        }
-      }
+
+     else if (make != null) {
+      return vehicleRepository.findVehicleBymake(make);
     }
+     else if(year!=null){
+       return vehicleRepository.findVehicleByYear(year);
+    }
+     else if(model!=null){
+       return vehicleRepository.findVehicleByModel(model);
+    }
+
     return queryVehicle;
   }
 

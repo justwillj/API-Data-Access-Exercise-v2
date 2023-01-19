@@ -16,8 +16,9 @@ public class VehicleController {
 
   //TEST
   @GetMapping(value = "/vehicles")
-  public List<Vehicle>getVehicles(@RequestParam (required = false )String type, @RequestParam (required = false) String make){
-    return vehicleService.getVehicles(type,make);
+  public List<Vehicle>getVehicles(@RequestParam (required = false )String type, @RequestParam (required = false) String make,
+                                  @RequestParam(required=false) String model,@RequestParam (required=false) Integer year){
+    return vehicleService.getVehicles(type,make,model,year);
   }
 
   @GetMapping("/vehicles/{id}")
