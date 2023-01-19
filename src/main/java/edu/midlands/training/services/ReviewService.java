@@ -16,4 +16,6 @@ public interface ReviewService {
     Review updateReviewById(Long id, Review newReview);
 
     Review addReview(Review newReview);
+
+    Long getReviewCount(String make, String model);
 }

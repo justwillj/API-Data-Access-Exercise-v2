@@ -23,6 +23,11 @@ public class ReviewController {
         return reviewService.getReviews(make,model);
     }
 
+    @GetMapping("/reviews/count")
+        public Long getReviewCount(@RequestParam String make, @RequestParam String model) {
+        return reviewService.getReviewCount(make,model);
+    }
+
     @PostMapping("/reviews")
     public Review addReview(@RequestBody Review newReview){
         return reviewService.addReview(newReview);

@@ -57,4 +57,20 @@ public class ReviewServiceImpl implements ReviewService {
     public Review addReview(Review newReview) {
         return reviewRepository.save(newReview);
     }
+
+    @Override
+    public Long getReviewCount(String make, String model) {
+        List<Review>queryReviewCount = new ArrayList<>();
+
+        if (make == null && model == null){
+            return reviewRepository.count();
+        }
+        for (Review r : reviewRepository.findAll()){
+            if (Objects.equals(r.getVehicle().getMake(), make) && Objects.equals(
+                    r.getVehicle().getModel(), model)){
+                queryReviewCount.add(r);
+            }
+        }
+        return (long) queryReviewCount.size();
+    }
 }
