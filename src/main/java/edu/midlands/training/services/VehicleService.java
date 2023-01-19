@@ -14,4 +14,12 @@ public interface VehicleService {
   Vehicle updateVehicleById(Long id, Vehicle newVehicle);
   Vehicle addVehicle(Vehicle newVehicle);
 
+  List<Vehicle> findVehicleByType(String type);
+
+  List<Vehicle> findVehicleBymake(String make);
+
+  List<Vehicle> findVehicleByModel(String model);
+
+  List<Vehicle> findVehicleByYear(Integer year);
+
 }

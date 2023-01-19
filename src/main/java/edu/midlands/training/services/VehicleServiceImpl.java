@@ -1,6 +1,7 @@
 package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Vehicle;
+import edu.midlands.training.exceptions.VehicleNotFound;
 import edu.midlands.training.repositories.VehicleRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,5 +73,65 @@ public class VehicleServiceImpl implements VehicleService{
   public Vehicle addVehicle(Vehicle newVehicle) {
     return vehicleRepository.save(newVehicle);
   }
+
+  @Override
+  public List<Vehicle> findVehicleByType (String type){
+    List<Vehicle> vehicleTypes = new ArrayList<>();
+    if (type != null) {
+
+      for (Vehicle v : vehicleRepository.findAll()) {
+        if (Objects.equals(v.getType(), type)) {
+          vehicleTypes.add(v);
+          return vehicleTypes;
+        }
+      }
+
+
+    }
+    throw new VehicleNotFound();
+  }
+
+  @Override
+  public List<Vehicle> findVehicleBymake (String make){
+    List<Vehicle> vehicleTypes = new ArrayList<>();
+    if (make == null) {
+
+
+      for (Vehicle v : vehicleRepository.findAll()) {
+        if (Objects.equals(v.getType(), make)) {
+          vehicleTypes.add(v);
+          return vehicleTypes;
+        }
+      }
+
+    }
+    throw new VehicleNotFound();
+  }
+
+  @Override
+  public List<Vehicle> findVehicleByModel(String model) {
+    List<Vehicle> vehicleTypes = new ArrayList<>();
+    for (Vehicle v : vehicleRepository.findAll()) {
+      if (Objects.equals(v.getModel(), model)) {
+        vehicleTypes.add(v);
+        return vehicleTypes;
+      }
+    }
+    return null;
+
+  }
+
+  @Override
+  public List<Vehicle> findVehicleByYear(Integer year) {
+    List<Vehicle> vehicleTypes = new ArrayList<>();
+    for (Vehicle v : vehicleRepository.findAll()) {
+      if (Objects.equals(v.getType(), year)) {
+        vehicleTypes.add(v);
+        return vehicleTypes;
+      }
+    }
+    return null;
+  }
+
 
 }
