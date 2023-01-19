@@ -15,10 +15,6 @@ public class VehicleController {
   private VehicleService vehicleService;
 
   //TEST
-  @GetMapping(value = "/vehicles")
-  public List<Vehicle>getVehicles(@RequestParam (required = false )String type, @RequestParam (required = false) String make){
-    return vehicleService.getVehicles(type,make);
-  }
 
   @GetMapping("/vehicles/{id}")
   public Vehicle getVehicleById(@PathVariable Long id){
