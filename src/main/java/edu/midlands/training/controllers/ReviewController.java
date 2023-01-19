@@ -2,6 +2,7 @@ package edu.midlands.training.controllers;
 
 import edu.midlands.training.entities.Review;
 import edu.midlands.training.services.ReviewService;
+import edu.midlands.training.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +15,12 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
+    @Autowired
+    private VehicleService vehicleService;
+
     @GetMapping(value = "/reviews")
-    public List<Review> getReviews() {
-        return reviewService.getReviews();
+    public List<Review> getReviews(@RequestParam(required = false)String make,@RequestParam(required = false)String model) {
+        return reviewService.getReviews(make,model);
     }
 
     @PostMapping("/reviews")

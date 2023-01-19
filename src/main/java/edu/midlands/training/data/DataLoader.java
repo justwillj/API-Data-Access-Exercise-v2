@@ -57,13 +57,13 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadReviews(){
         review1 = reviewRepository.save
-                (new Review(1L, "brrr", "alsobrrr", "numbers", LocalDate.of(2020,01,02) , "badusername", vehicle1));
+                (new Review(1L, "ReviewOne", "Car is really cool", "numbers", LocalDate.of(2020,01,02) , "badusername", vehicle1));
         review2 = reviewRepository.save
-                (new Review(2L, "brrr", "alsobrrr", "numbers", LocalDate.of(2021,02,03), "badusername", vehicle1));
+                (new Review(2L, "ReviewTwo", "Testing this", "numbers", LocalDate.of(2021,02,03), "badusername", vehicle1));
         review3 = reviewRepository.save
-                (new Review(3L, "brrr", "alsobrrr", "numbers", LocalDate.of(2022,11,12), "badusername", vehicle2));
+                (new Review(3L, "ReviewThree", "Hope this works", "numbers", LocalDate.of(2022,11,12), "badusername", vehicle2));
         review4 = reviewRepository.save
-                (new Review(4L, "brrr", "alsobrrr", "numbers", LocalDate.of(2021,11,25) , "badusername", vehicle3));
+                (new Review(4L, "ReviewFour", "alsobrrr", "numbers", LocalDate.of(2021,11,25) , "badusername", vehicle3));
 
     }
 

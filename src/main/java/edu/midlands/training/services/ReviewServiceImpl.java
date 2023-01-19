@@ -2,6 +2,8 @@ package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Review;
 import edu.midlands.training.repositories.ReviewRepository;
+import java.util.ArrayList;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +17,18 @@ public class ReviewServiceImpl implements ReviewService {
     private ReviewRepository reviewRepository;
 
     @Override
-    public List<Review> getReviews() {
-        return reviewRepository.findAll();
+    public List<Review> getReviews(String make,String model) {
+        List<Review> queryReviews = new ArrayList<>();
+        if (make == null && model == null){
+            return reviewRepository.findAll();
+        }
+        for (Review r : reviewRepository.findAll()){
+            if (Objects.equals(r.getVehicle().getMake(), make) && Objects.equals(
+                r.getVehicle().getModel(), model)){
+                queryReviews.add(r);
+            }
+        }
+        return queryReviews;
     }
 
     @Override

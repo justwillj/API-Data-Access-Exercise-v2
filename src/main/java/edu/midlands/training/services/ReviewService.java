@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ReviewService {
 
-    List<Review> getReviews();
+    List<Review> getReviews(String make, String model);
 
     Review getReviewById(Long id);
 
