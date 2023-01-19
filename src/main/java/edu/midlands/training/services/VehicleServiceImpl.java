@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 @Service
 public class VehicleServiceImpl implements VehicleService{
@@ -19,8 +20,13 @@ public class VehicleServiceImpl implements VehicleService{
   }
 
   @Override
-  public Optional<Vehicle> getVehicleById(Long id) {
-    return vehicleRepository.findById(id);
+  public Vehicle getVehicleById(Long id) {
+    for (Vehicle v: vehicleRepository.findAll()) {
+      if(v.getId() == id){
+        return v;
+      }
+    }
+    return null;
   }
 
   @Override
@@ -37,4 +43,6 @@ public class VehicleServiceImpl implements VehicleService{
   public Vehicle addVehicle(Vehicle newVehicle) {
     return vehicleRepository.save(newVehicle);
   }
+
+
 }

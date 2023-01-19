@@ -20,8 +20,13 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public Optional<Review> getReviewById(Long id) {
-        return reviewRepository.findById(id);
+    public Review getReviewById(Long id) {
+        for (Review r: reviewRepository.findAll()) {
+            if (r.getId() == id){
+                return r;
+            }
+        }
+        return null;
     }
 
 
