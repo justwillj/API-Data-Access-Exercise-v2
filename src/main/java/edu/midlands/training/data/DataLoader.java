@@ -26,6 +26,10 @@ public class DataLoader implements CommandLineRunner {
     private Vehicle vehicle1;
     private Vehicle vehicle2;
     private Vehicle vehicle3;
+    private Vehicle vehicle4;
+    private Vehicle vehicle5;
+
+    private Vehicle vehicle6;
 
     private Review review1;
     private Review review2;
@@ -45,11 +49,17 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadVehicles(){
         vehicle1 = vehicleRepository.save
-                (new Vehicle(1L, "SLOWCAR", "make1", "string3", 200));
+                (new Vehicle(1L, "Car", "Toyota", "Camry", 200));
         vehicle2 = vehicleRepository.save
-                (new Vehicle(2L, "test", "make2", "string3", 250));
+                (new Vehicle(2L, "Truck", "Ford", "F-150", 250));
         vehicle3 = vehicleRepository.save
-                (new Vehicle(3L, "FASTCAR", "make3", "string3", 280));
+                (new Vehicle(3L, "Truck", "Ram", "1500", 280));
+        vehicle4 = vehicleRepository.save
+                (new Vehicle(4L, "Car", "Ford", "Focus", 380));
+        vehicle5 = vehicleRepository.save
+                (new Vehicle(5L, "SUV", "VW", "Atlus", 2850));
+        vehicle6 = vehicleRepository.save
+                (new Vehicle(6L, "Car", "Honda", "Civic", 28430));
 
 
 
