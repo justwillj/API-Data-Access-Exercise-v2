@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Component
@@ -56,13 +57,13 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadReviews(){
         review1 = reviewRepository.save
-                (new Review(1L, "brrr", "alsobrrr", "numbers", "date" , "badusername", vehicle1));
+                (new Review(1L, "brrr", "alsobrrr", "numbers", LocalDate.of(2020,01,02) , "badusername", vehicle1));
         review2 = reviewRepository.save
-                (new Review(2L, "brrr", "alsobrrr", "numbers", "date" , "badusername", vehicle1));
+                (new Review(2L, "brrr", "alsobrrr", "numbers", LocalDate.of(2021,02,03), "badusername", vehicle1));
         review3 = reviewRepository.save
-                (new Review(3L, "brrr", "alsobrrr", "numbers", "date" , "badusername", vehicle2));
+                (new Review(3L, "brrr", "alsobrrr", "numbers", LocalDate.of(2022,11,12), "badusername", vehicle2));
         review4 = reviewRepository.save
-                (new Review(4L, "brrr", "alsobrrr", "numbers", "date" , "badusername", vehicle3));
+                (new Review(4L, "brrr", "alsobrrr", "numbers", LocalDate.of(2021,11,25) , "badusername", vehicle3));
 
     }
 

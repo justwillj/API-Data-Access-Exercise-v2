@@ -1,6 +1,7 @@
 package edu.midlands.training.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -16,7 +17,7 @@ public class Review {
 
     private String rating;
 
-    private String date;
+    private LocalDate date;
 
     private String username;
 
@@ -57,11 +58,11 @@ public class Review {
         this.rating = rating;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -84,7 +85,7 @@ public class Review {
     public Review() {
     }
 
-    public Review(Long id, String title, String description, String rating, String date, String username, Vehicle vehicle) {
+    public Review(Long id, String title, String description, String rating, LocalDate date, String username, Vehicle vehicle) {
         this.id = id;
         this.title = title;
         this.description = description;
