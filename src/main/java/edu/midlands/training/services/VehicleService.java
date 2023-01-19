@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface VehicleService {
-  List<Vehicle>getVehicles();
+  List<Vehicle>getVehicles(String type, String make);
 
   Optional<Vehicle> getVehicleById(Long id);
 
@@ -13,4 +13,6 @@ public interface VehicleService {
 
   Vehicle updateVehicleById(Long id, Vehicle newVehicle);
   Vehicle addVehicle(Vehicle newVehicle);
+
+  Vehicle getByType(String type);
 }

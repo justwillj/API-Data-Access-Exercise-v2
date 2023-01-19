@@ -2,7 +2,9 @@ package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Vehicle;
 import edu.midlands.training.repositories.VehicleRepository;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,35 @@ public class VehicleServiceImpl implements VehicleService{
   @Autowired
   private VehicleRepository vehicleRepository;
   @Override
-  public List<Vehicle> getVehicles() {
-    return vehicleRepository.findAll();
+  public List<Vehicle> getVehicles(String type, String make) {
+    List<Vehicle> queryVehicle =new ArrayList<>();
+    if (type == null && make == null){
+      return vehicleRepository.findAll();
+    }
+
+
+    if (type != null && make != null){
+    for (Vehicle v :vehicleRepository.findAll()) {
+        if (Objects.equals(v.getType(), type)) {
+          if (Objects.equals(v.getMake(),make)) {
+            queryVehicle.add(v);
+          }
+        }
+      }
+    } else if (type != null){
+      for (Vehicle v :vehicleRepository.findAll()) {
+        if (Objects.equals(v.getType(), type)) {
+          queryVehicle.add(v);
+        }
+      }
+    } else if (make != null) {
+      for (Vehicle v : vehicleRepository.findAll()) {
+        if (Objects.equals(v.getMake(), make)) {
+          queryVehicle.add(v);
+        }
+      }
+    }
+    return queryVehicle;
   }
 
   @Override
@@ -36,5 +65,10 @@ public class VehicleServiceImpl implements VehicleService{
   @Override
   public Vehicle addVehicle(Vehicle newVehicle) {
     return vehicleRepository.save(newVehicle);
+  }
+
+  @Override
+  public Vehicle getByType(String type) {
+    return vehicleRepository.findByType(type);
   }
 }

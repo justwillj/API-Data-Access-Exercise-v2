@@ -16,8 +16,8 @@ public class VehicleController {
 
   //TEST
   @GetMapping(value = "/vehicles")
-  public List<Vehicle>getVehicles(){
-    return vehicleService.getVehicles();
+  public List<Vehicle>getVehicles(@RequestParam (required = false )String type, @RequestParam (required = false) String make){
+    return vehicleService.getVehicles(type,make);
   }
 
   @GetMapping("/vehicles/{id}")
@@ -39,5 +39,7 @@ public class VehicleController {
   public Vehicle addVehicle(@RequestBody Vehicle newVehicle){
     return vehicleService.addVehicle(newVehicle);
   }
+
+  //GET MAPPING FOR THE QUERY STATEMENTS
 
 }
