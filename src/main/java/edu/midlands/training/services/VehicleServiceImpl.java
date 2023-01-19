@@ -73,12 +73,4 @@ public class VehicleServiceImpl implements VehicleService{
     return vehicleRepository.save(newVehicle);
   }
 
-<<<<<<< HEAD
-  @Override
-  public Vehicle getByType(String type) {
-    return vehicleRepository.findByType(type);
-  }
-=======
-
->>>>>>> d9809f3e2ea8df7793491e2048228a402f402dd6
 }

@@ -14,5 +14,4 @@ public interface VehicleService {
   Vehicle updateVehicleById(Long id, Vehicle newVehicle);
   Vehicle addVehicle(Vehicle newVehicle);
 
-  Vehicle getByType(String type);
 }
