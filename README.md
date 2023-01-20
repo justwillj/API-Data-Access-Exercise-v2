@@ -6,10 +6,13 @@
 3. We created our own data in the repositories for both vehicles and reviews.This data is based on the fields we were given.
 
 # PostMan Link 
-https://api.postman.com/collections/25274275-573d6638-1e9c-45f0-a4bf-0238a904777a?access_key=PMAT-01GQ7XMVW3MCCTADBAT0V8VDDG 
+
+[https://api.postman.com/collections/25274277-06f9cbc6-79e5-490a-9636-5c7dff5356ed?access_key=PMAT-01GQ83VKKZHRM7S46VB9GZJWQ8](https://api.postman.com/collections/25274277-06f9cbc6-79e5-490a-9636-5c7dff5356ed?access_key=PMAT-01GQ83VKKZHRM7S46VB9GZJWQ8)
 
 # GitLab Link
 To view the project below is the gitlab Link
+
+[https://gitlab.com/mtc-cce-wdev/oct-2022-cohort/justin-williams/api-data-access-exercise-v2](https://gitlab.com/mtc-cce-wdev/oct-2022-cohort/justin-williams/api-data-access-exercise-v2)
 
 # Authors 
 1. Andrew Grant
