@@ -29,10 +29,6 @@ public class VehicleServiceImpl implements VehicleService{
     if (type == null && make == null &&model==null &&year==null){
       return vehicleRepository.findAll();
     }
-    if(type!=null && make!=null && model!=null && year!=null){
-      return vehicleRepository.findAll();
-    }
-
 
     if (type != null && make != null){
     for (Vehicle v :vehicleRepository.findAll()) {
