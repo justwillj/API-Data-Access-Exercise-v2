@@ -6,6 +6,7 @@ import edu.midlands.training.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -32,7 +33,7 @@ public class ReviewController {
 
     /**CRUD functions to add a new review */
     @PostMapping("/reviews")
-    public Review addReview(@RequestBody Review newReview){
+    public Review addReview(@Valid @RequestBody Review newReview){
         return reviewService.addReview(newReview);
     }
 
@@ -53,7 +54,7 @@ public class ReviewController {
 
     /** CRUD function for reviews to update  the review based on the given Id*/
         @PutMapping("/reviews/{id}")
-        public Review updateReviewById(@PathVariable Long id, @RequestBody Review newReview) {
+        public Review updateReviewById(@Valid @PathVariable Long id, @RequestBody Review newReview) {
             return reviewService.updateReviewById(id,newReview);
         }
 

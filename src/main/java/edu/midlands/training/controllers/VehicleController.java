@@ -8,6 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class VehicleController {
 
@@ -39,13 +41,13 @@ public class VehicleController {
 
   /** CRUD function for Vehicles to update a Vehicle when given an Id*/
   @PutMapping("/vehicles/{id}")
-  public Vehicle updateVehicleById(@PathVariable Long id, @RequestBody Vehicle newVehicle){
+  public Vehicle updateVehicleById(@Valid @PathVariable Long id, @RequestBody Vehicle newVehicle){
     return vehicleService.updateVehicleById(id,newVehicle);
   }
 
   /** CRUD fucntion for Vehicles to add new vehicle */
   @PostMapping("/vehicles")
-  public Vehicle addVehicle(@RequestBody Vehicle newVehicle){
+  public Vehicle addVehicle(@Valid @RequestBody Vehicle newVehicle){
     return vehicleService.addVehicle(newVehicle);
   }
 

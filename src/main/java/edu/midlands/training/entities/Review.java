@@ -1,6 +1,8 @@
 package edu.midlands.training.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -10,15 +12,15 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank(message = "title is a mandatory field")
     private String title;
-
+    @NotBlank(message = "description is a mandatory field")
     private String description;
-
+    @NotBlank(message = "rating is a mandatory field")
     private String rating;
-
+    @NotNull(message = "date is a mandatory field")
     private LocalDate date;
-
+    @NotBlank(message = "username is a mandatory field")
     private String username;
 
     @ManyToOne(fetch = FetchType.EAGER)

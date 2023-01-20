@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 import javax.annotation.Generated;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Vehicle {
@@ -12,12 +14,14 @@ public class Vehicle {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @NotBlank(message = "type is a mandatory field")
   private String type;
 
+  @NotBlank(message = "make is a mandatory field")
   private String make;
-
+  @NotBlank(message = "model is a mandatory field")
   private String model;
-
+  @NotNull(message = "year is a mandatory field")
   private Integer year;
 
   @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
