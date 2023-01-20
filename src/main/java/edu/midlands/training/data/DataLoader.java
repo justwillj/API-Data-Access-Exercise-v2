@@ -51,7 +51,7 @@ public class DataLoader implements CommandLineRunner {
 
     }
 
-
+/** Vehicle Data*/
     private void loadVehicles(){
         vehicle1 = vehicleRepository.save
                 (new Vehicle(1L, "Car", "Toyota", "Camry", 200));
@@ -70,6 +70,8 @@ public class DataLoader implements CommandLineRunner {
 
     }
 
+
+    /** Reviews Data */
     private void loadReviews(){
         review1 = reviewRepository.save
                 (new Review(1L, "ReviewOne", "Car is really cool", "1/10", LocalDate.of(2020,01,02) , "badusername", vehicle1));
