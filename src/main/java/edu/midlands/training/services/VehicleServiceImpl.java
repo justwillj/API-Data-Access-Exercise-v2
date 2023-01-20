@@ -67,7 +67,7 @@ public class VehicleServiceImpl implements VehicleService{
         return v;
       }
     }
-    return null;
+    throw new VehicleNotFound();
   }
 
   /** Deletes the vehicle Based on id
@@ -75,6 +75,10 @@ public class VehicleServiceImpl implements VehicleService{
    * If there is no vehicle with matching id it gives an exception*/
   @Override
   public void deleteVehicleById(Long id) {
+    Vehicle oldVehicle = getVehicleById(id);
+    if (!Objects.equals(oldVehicle.getId(), id)){
+      throw new VehicleNotFound();
+    }
     vehicleRepository.deleteById(id);
   }
 
@@ -85,6 +89,9 @@ public class VehicleServiceImpl implements VehicleService{
    * @returns the updated newvehicle*/
   @Override
   public Vehicle updateVehicleById(Long id, Vehicle newVehicle) {
+    if (!Objects.equals(newVehicle.getId(), id)){
+      throw new VehicleNotFound();
+    }
     return vehicleRepository.save(newVehicle);
   }
 
