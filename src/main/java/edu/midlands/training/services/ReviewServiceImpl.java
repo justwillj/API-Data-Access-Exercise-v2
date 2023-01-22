@@ -1,6 +1,9 @@
 package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Review;
+import edu.midlands.training.entities.Vehicle;
+import edu.midlands.training.exceptions.ReviewNotFound;
+import edu.midlands.training.exceptions.VehicleNotFound;
 import edu.midlands.training.repositories.ReviewRepository;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -46,7 +49,7 @@ public class ReviewServiceImpl implements ReviewService {
                 return r;
             }
         }
-        return null;
+        throw new ReviewNotFound();
     }
 
     /** Deletes the review Based on id
@@ -55,6 +58,10 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public void deleteReviewById(Long id) {
+      Review oldReview = getReviewById(id);
+      if (!Objects.equals(oldReview.getId(), id)){
+        throw new ReviewNotFound();
+      }
         reviewRepository.deleteById(id);
     }
 
@@ -65,6 +72,9 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public Review updateReviewById(Long id, Review newReview) {
+      if (!Objects.equals(newReview.getId(), id)){
+        throw new ReviewNotFound();
+      }
         return reviewRepository.save(newReview);
     }
 
