@@ -1,9 +1,7 @@
 package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Review;
-import edu.midlands.training.entities.Vehicle;
 import edu.midlands.training.exceptions.ReviewNotFound;
-import edu.midlands.training.exceptions.VehicleNotFound;
 import edu.midlands.training.repositories.ReviewRepository;
 import java.util.ArrayList;
 import java.util.Objects;
