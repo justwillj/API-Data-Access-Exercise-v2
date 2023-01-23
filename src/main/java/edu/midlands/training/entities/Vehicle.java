@@ -2,7 +2,6 @@ package edu.midlands.training.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
-import javax.annotation.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
